@@ -1,0 +1,26 @@
+{
+  "name": "40k-dice-roller",
+  "version": "1.0.0",
+  "description": "Program for modeling units, models, and weapons and generating data for combat results",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "\"test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pafrias/40k-dice-roller.git"
+  },
+  "keywords": [
+    "40k"
+  ],
+  "author": "Pablo Andres Frias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pafrias/40k-dice-roller/issues"
+  },
+  "homepage": "https://github.com/pafrias/40k-dice-roller#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}

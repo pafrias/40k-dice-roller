@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/pafrias/40k-dice-roller#readme",
   "devDependencies": {
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/node": "^15.3.0",
     "babel-cli": "^6.18.0",
     "babel-preset-env": "^1.7.0"
   }

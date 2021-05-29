@@ -4,6 +4,7 @@
   "description": "Program for modeling units, models, and weapons and generating data for combat results",
   "main": "dist/index.js",
   "scripts": {
+    "build": "babel src/index.ts --out-file ./dist/index.js",
     "test": "\"test\""
   },
   "repository": {
@@ -20,9 +21,10 @@
   },
   "homepage": "https://github.com/pafrias/40k-dice-roller#readme",
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
     "@babel/preset-typescript": "^7.13.0",
     "@types/node": "^15.3.0",
-    "babel-cli": "^6.18.0",
     "babel-preset-env": "^1.7.0"
   }
 }

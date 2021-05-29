@@ -1,8 +1,11 @@
-import {Entity, Weapon, RangedWeapon, MeleeWeapon} from '.'
+import {Weapon, RangedWeapon, MeleeWeapon} from '.'
+import {Entity} from './Entity'
 
 export class Model extends Entity {
-  MeleeWeapons:MeleeWeapon[]
-  RangedWeapons:RangedWeapon[]
+
+  MeleeWeapons:MeleeWeapon[] = []
+
+  RangedWeapons:RangedWeapon[] = []
 
   equip(...weapons:Weapon[]) {
 

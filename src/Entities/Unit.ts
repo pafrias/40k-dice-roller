@@ -1,8 +1,8 @@
 import {Entity} from './Entity';
-import {Model} from './Model';
+import {Model} from '.';
 
 export class Unit extends Entity {
-  Models: Model[]
+  Models: Model[] = []
 
   get size() {
     return this.Models.length
@@ -18,6 +18,7 @@ export class Unit extends Entity {
       }
       let proxy = this.inherit(model);
       if (proxy instanceof Model) this.Models.push(proxy);
+      else throw Error("Object is not an instance of Model")
     }
   }
 

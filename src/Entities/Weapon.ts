@@ -1,4 +1,4 @@
-import {Entity} from '.';
+import {Entity} from './Entity';
 import { reRoll, rollNDice } from '../helpers';
 
 export class Weapon extends Entity {
@@ -8,9 +8,9 @@ export class Weapon extends Entity {
   StrMod:string
   AP:number
 
-  Blast:boolean = false
-  Flamer:boolean = false
-  Melta:boolean = false
+  Blast:boolean
+  Flamer:boolean
+  Melta:boolean
 
   MultiplyAttacks:number
   ExtraAttacksWithThis:number

@@ -35,7 +35,7 @@ export class Modifiers {
 
 export class Entity extends Modifiers {
 
-  constructor(props:Object) {
+  constructor(props:Object = {}) {
     super(props)
     Object.assign(this, props)
   }

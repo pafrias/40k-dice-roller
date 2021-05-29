@@ -1,14 +1,11 @@
 import {rollD} from '../../helpers'
 
 export class Characteristic {
-  D: number
-  N: number
-  C: number
+  D: number = 0; // Number of dice
+  N: number = 0; // Number on the dice
+  C: number = 0; // added constant
 
   constructor(str:string) {
-    this.N = 0; // number of dice
-    this.D = 0; // "type" of dice, max
-    this.C = 0; // constant value
 
     let {parseInt} = Number;
     
@@ -16,8 +13,8 @@ export class Characteristic {
     str = str.split(/\s/).join('');
 
     // parseInt returns the longest valid substring starting at index 0
-    if (!isNaN(parseInt(str))) {
-      this.C = parseInt(str);
+    if (!isNaN(Number(str))) {
+      this.C = 0 + parseInt(str);
       return;
     }
 
@@ -26,6 +23,7 @@ export class Characteristic {
     if (!isValidDice) {
       // throw error
       console.log(`${str} is not a valid Characteristic`);
+      return;
     }
 
     let dIndex:number = str.search(/d|D/);
@@ -33,14 +31,13 @@ export class Characteristic {
     let operatorIndex:number = str.search(/-|\+/);
 
     // find and trim any constants, save to C
-    if (operatorIndex > -1) { 
-      this.C = parseInt(str.slice(operatorIndex));
-      str = str.slice(0, operatorIndex);
-    }
+    this.C = operatorIndex > -1 ?
+      parseInt(str.slice(operatorIndex)) * 1
+      : 0;
 
     this.N = dIndex === 0 ? 1 : parseInt(str.slice(0, dIndex));
 
-    this.D = parseInt(str.slice(dIndex + 1));
+    this.D = parseInt(str.slice(dIndex + 1, operatorIndex === -1 ? Infinity : operatorIndex));
 
   }
 
@@ -51,7 +48,7 @@ export class Characteristic {
   }
 
   get max():number {
-    return this.C + this.N * this.D;
+    return (this.N * this.D) + this.C;
   }
 
 }

@@ -1,4 +1,4 @@
-import {rollD} from './helpers/roll'
+import {rollD} from '../../helpers'
 
 export class Characteristic {
   D: number
@@ -44,13 +44,13 @@ export class Characteristic {
 
   }
 
-  valueOf():number {
+  get val():number {
     let total = this.C;
     for (let i = 0; i < this.N; i++) total += rollD(this.D);
     return total;
   }
 
-  max():number {
+  get max():number {
     return this.C + this.N * this.D;
   }
 
